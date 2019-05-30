@@ -1,0 +1,22 @@
+
+<!-- BPMN diagram container -->
+<div id="canvas"></div>
+
+<!-- replace CDN url with local bpmn-js path -->
+<script src="https://unpkg.com/bpmn-js@0.27.0-1/dist/bpmn-viewer.development.js"></script>
+
+<script>
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      viewer.importXML(xhr.response, function(err) {
+        // ...
+      });
+    }
+  };
+
+  xhr.open('GET', 'examples/qr-code.bpmn', true);
+  xhr.send(null);
+</script>
+
