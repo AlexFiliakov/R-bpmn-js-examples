@@ -2,7 +2,7 @@
 <head>
   <title>bpmn-js url viewer demo</title>
 
-  <style>
+  <style id="viewer-only">
     body {
       font-family: 'Arial', sans-serif;
     }
@@ -27,11 +27,11 @@
 <body>
 
   <div class="header">
-    <h3>Open BPMN 2.0 diagram from URL</h3>
-    <p>
-      <input type="text" id="js-url" placeholder="path to diagram" /><button id="js-open">Open</button>
+    <h3 id="intro">Open BPMN 2.0 diagram from URL</h3>
+    <p style="margin:0;">
+      <input type="text" id="js-url" placeholder="path to diagram" /><button id="js-open">Open</button><button id="js-hide">Minimize</button>
     </p>
-    <p>
+    <p id="hint">
       <strong>Hint:</strong> try <code>https://cdn.rawgit.com/bpmn-io/bpmn-js-examples/dfceecba/url-viewer/resources/pizza-collaboration.bpmn</code></strong>
     </p>
   </div>
@@ -88,6 +88,11 @@
       openFromUrl(url);
     });
 
+    $('#js-hide').click(function() {
+      //openFromUrl(url);
+      document.getElementById("hint").style.display = "none";
+      document.getElementById("intro").style.display = "none";
+    });
 
     ///// auto open ?url=diagram-url ///////////////////////
 
