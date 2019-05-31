@@ -1,3 +1,6 @@
+Some examples how to use bpmn-js in R, want to eventually move into Plotly Dash.
+
+
 # bpmn-js Examples
 
 This repository contains a number of examples showing how use and integrate
